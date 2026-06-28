@@ -8,7 +8,8 @@ import os
 from datetime import datetime
 
 from handlers.document_handler import extract_document
-from gemini_service import ask_gemini, extract_topics
+from services.chat_service import ask_gemini
+from services.topic_service import extract_topics
 
 app = FastAPI()
 
