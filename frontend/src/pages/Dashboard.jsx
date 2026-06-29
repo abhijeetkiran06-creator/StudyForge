@@ -1,5 +1,6 @@
 import Layout from "../components/layout/Layout";
 import ContinueLearning from "../components/dashboard/ContinueLearning";
+import UploadDocument from "../components/UploadDocument";
 import StatCard from "../components/dashboard/StatCard";
 
 function Dashboard() {
@@ -43,6 +44,8 @@ function Dashboard() {
                 </div>
 
             </div>
+
+            <UploadDocument />
 
             <div className="grid grid-cols-3 gap-6">
 

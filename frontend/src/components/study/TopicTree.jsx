@@ -1,7 +1,7 @@
-import TopicNode from "./TopicNode";
+import UnitNode from "./UnitNode";
 
 function TopicTree({
-    topics,
+    units,
     selectedTopic,
     onTopicSelect,
     onToggle
@@ -9,16 +9,22 @@ function TopicTree({
 
     return (
 
-        <div className="space-y-2">
+        <div>
 
-            {topics.map((topic) => (
+            {units.map((unit, index) => (
 
-                <TopicNode
-                    key={topic.id}
-                    topic={topic}
-                    selected={selectedTopic.id === topic.id}
-                    onSelect={onTopicSelect}
+                <UnitNode
+
+                    key={index}
+
+                    unit={unit}
+
+                    selectedTopic={selectedTopic}
+
+                    onTopicSelect={onTopicSelect}
+
                     onToggle={onToggle}
+
                 />
 
             ))}

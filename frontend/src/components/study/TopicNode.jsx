@@ -11,11 +11,7 @@ function TopicNode({
     return (
 
         <div
-            onClick={() => {
-             console.log("Clicked:", topic.title);
-             alert(topic.title);
-             onSelect(topic);
-            }}
+            onClick={() => onSelect(topic)}
             className={`
                 flex
                 items-center

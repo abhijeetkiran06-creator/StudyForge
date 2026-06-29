@@ -27,13 +27,13 @@ Do NOT explain your reasoning.
 Return exactly in this format:
 
 [
-  {
+  {{
     "unit": "Unit 1",
     "topics": [
       "Topic A",
       "Topic B"
     ]
-  }
+  }}
 ]
 
 Study Material:

@@ -72,30 +72,11 @@ async def upload_document(file: UploadFile = File(...)):
     course["extension"] = document["extension"]
     course["text"] = document["text"]
     course["title"] = document["filename"].rsplit(".", 1)[0]
-    course["units"] = []
+    course["units"] = extract_topics(course["text"])
 
     return {
         "message": "Study material uploaded successfully",
         "course": course["title"]
-    }
-
-# -----------------------------
-# Extract Topics
-# -----------------------------
-@app.post("/extract-topics")
-def extract_topics_api():
-
-    global course
-
-    if not course["text"]:
-        return {
-            "error": "No study material uploaded."
-        }
-
-    course["units"] = extract_topics(course["text"])
-
-    return {
-        "course": course
     }
 
 # -----------------------------
@@ -130,6 +111,4 @@ def ask_question(request: QuestionRequest):
 @app.get("/course")
 def get_course():
 
-    return {
-        "course": course
-    }
+    return course
