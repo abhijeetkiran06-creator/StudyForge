@@ -2,7 +2,13 @@ function Card({
 
     children,
 
-    className = ""
+    className = "",
+
+    padding = "p-6",
+
+    shadow = "",
+
+    hover = false,
 
 }) {
 
@@ -12,19 +18,21 @@ function Card({
 
             className={`
 
-            bg-white
+                bg-white
 
-            rounded-2xl
+                rounded-2xl
 
-            border
+                border border-slate-200
 
-            border-[#E2E8F0]
+                ${padding}
 
-            shadow-sm
+                ${shadow}
 
-            p-6
+                ${hover
+                    ? "transition-all duration-200 hover:border-indigo-300 hover:shadow-md"
+                    : ""}
 
-            ${className}
+                ${className}
 
             `}
 
@@ -34,8 +42,8 @@ function Card({
 
         </div>
 
-    )
+    );
 
 }
 
-export default Card
+export default Card;

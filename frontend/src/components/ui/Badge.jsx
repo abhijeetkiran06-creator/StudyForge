@@ -2,49 +2,71 @@ function Badge({
 
     children,
 
-    color = "primary"
+    variant = "default",
+
+    className = "",
 
 }) {
 
-    const colors = {
+    const variants = {
 
-        primary:
+        default: `
+            bg-slate-100
+            text-slate-700
+        `,
 
-        "bg-indigo-100 text-indigo-700",
+        success: `
+            bg-emerald-100
+            text-emerald-700
+        `,
 
-        success:
+        warning: `
+            bg-amber-100
+            text-amber-700
+        `,
 
-        "bg-green-100 text-green-700",
+        danger: `
+            bg-red-100
+            text-red-700
+        `,
 
-        warning:
+        info: `
+            bg-blue-100
+            text-blue-700
+        `,
 
-        "bg-yellow-100 text-yellow-700",
+        primary: `
+            bg-indigo-100
+            text-indigo-700
+        `
 
-        error:
+    };
 
-        "bg-red-100 text-red-700"
-
-    }
-
-    return(
+    return (
 
         <span
 
-        className={`
+            className={`
 
-        px-3
+                inline-flex
 
-        py-1
+                items-center
 
-        rounded-full
+                rounded-full
 
-        text-sm
+                px-3
 
-        font-medium
+                py-1
 
-        ${colors[color]}
+                text-xs
 
-        `}
+                font-semibold
+
+                ${variants[variant]}
+
+                ${className}
+
+            `}
 
         >
 
@@ -52,8 +74,8 @@ function Badge({
 
         </span>
 
-    )
+    );
 
 }
 
-export default Badge
+export default Badge;

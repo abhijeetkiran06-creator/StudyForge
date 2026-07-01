@@ -1,31 +1,23 @@
-export const colors = {
+const colors = {
+  primary: "#4F46E5",
+  primaryHover: "#4338CA",
 
-    primary:"#4F46E5",
+  background: "#F8FAFC",
+  surface: "#FFFFFF",
 
-    primaryHover:"#4338CA",
+  border: "#E2E8F0",
 
-    accent:"#38BDF8",
+  title: "#0F172A",
+  text: "#475569",
+  muted: "#94A3B8",
 
-    background:"#F8FAFC",
+  success: "#10B981",
+  warning: "#F59E0B",
+  danger: "#EF4444",
 
-    surface:"#FFFFFF",
+  info: "#3B82F6",
 
-    border:"#E2E8F0",
+  shadow: "rgba(15,23,42,0.08)"
+};
 
-    text:"#0F172A",
-
-    secondary:"#64748B",
-
-    success:"#10B981",
-
-    warning:"#F59E0B",
-
-    error:"#EF4444",
-
-    darkBg:"#020617",
-
-    darkSurface:"#0F172A",
-
-    darkBorder:"#1E293B"
-
-}
+export default colors;

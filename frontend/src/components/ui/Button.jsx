@@ -4,47 +4,78 @@ function Button({
 
     onClick,
 
-    variant="primary"
+    variant = "primary",
 
-}){
+    className = "",
 
-    const styles={
+    disabled = false,
 
-        primary:
+    type = "button",
 
-        "bg-[#4F46E5] hover:bg-[#4338CA] text-white",
+}) {
 
-        success:
+    const variants = {
 
-        "bg-[#10B981] hover:bg-[#059669] text-white",
+        primary: `
+            bg-indigo-600
+            text-white
+            hover:bg-indigo-700
+            shadow-sm
+        `,
 
-        secondary:
+        secondary: `
+            bg-slate-100
+            text-slate-700
+            hover:bg-slate-200
+        `,
 
-        "bg-white border border-gray-300 text-gray-700"
+        ghost: `
+            bg-transparent
+            text-slate-700
+            hover:bg-slate-100
+        `,
 
-    }
+        danger: `
+            bg-red-500
+            text-white
+            hover:bg-red-600
+        `
 
-    return(
+    };
+
+    return (
 
         <button
 
-        onClick={onClick}
+            type={type}
 
-        className={`
+            onClick={onClick}
 
-        px-6
+            disabled={disabled}
 
-        py-3
+            className={`
 
-        rounded-xl
+                px-5
 
-        font-medium
+                py-2.5
 
-        transition
+                rounded-xl
 
-        ${styles[variant]}
+                font-medium
 
-        `}
+                transition-all
+
+                duration-200
+
+                disabled:opacity-50
+
+                disabled:cursor-not-allowed
+
+                ${variants[variant]}
+
+                ${className}
+
+            `}
 
         >
 
@@ -52,8 +83,8 @@ function Button({
 
         </button>
 
-    )
+    );
 
 }
 
-export default Button
+export default Button;

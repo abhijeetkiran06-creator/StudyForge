@@ -1,9 +1,11 @@
-export const spacing = {
+const spacing = {
+  xs: "4px",
+  sm: "8px",
+  md: "16px",
+  lg: "24px",
+  xl: "32px",
+  xxl: "48px",
+  xxxl: "64px"
+};
 
-    page:"p-8",
-
-    card:"p-6",
-
-    section:"mb-8"
-
-}
+export default spacing;

@@ -1,7 +1,15 @@
+import { useState } from "react";
+
+import LearnStage from "./stages/LearnStage";
+import RememberStage from "./stages/RememberStage";
+import PracticeStage from "./stages/PracticeStage";
+import MasterStage from "./stages/MasterStage";
+
 import Card from "../ui/Card";
-import Button from "../ui/Button";
 
 function TopicContent({ topic }) {
+
+    const [stage, setStage] = useState("learn");
 
     if (!topic) {
 
@@ -21,61 +29,63 @@ function TopicContent({ topic }) {
 
     }
 
-    return (
+    switch (stage) {
 
-        <Card>
+        case "learn":
 
-            <h1 className="text-3xl font-bold mb-6">
+            return (
 
-                {topic.title}
+                <LearnStage
 
-            </h1>
+                    topic={topic}
 
-            <h2 className="text-xl font-semibold mb-3">
+                    onContinue={() => setStage("remember")}
 
-                Summary
+                />
 
-            </h2>
+            );
 
-            <p className="text-[#64748B] mb-8">
+        case "remember":
 
-                {topic.summary}
+            return (
 
-            </p>
+                <RememberStage
 
-            <div className="flex gap-3 flex-wrap">
+                    topic={topic}
 
-                <Button>Summary</Button>
+                />
 
-                <Button variant="secondary">
+            );
 
-                    Flashcards
+        case "practice":
 
-                </Button>
+            return (
 
-                <Button variant="secondary">
+                <PracticeStage
 
-                    MCQs
+                    topic={topic}
 
-                </Button>
+                />
 
-                <Button variant="secondary">
+            );
 
-                    Explain
+        case "master":
 
-                </Button>
+            return (
 
-                <Button variant="secondary">
+                <MasterStage
 
-                    Mind Map
+                    topic={topic}
 
-                </Button>
+                />
 
-            </div>
+            );
 
-        </Card>
+        default:
 
-    );
+            return null;
+
+    }
 
 }
 
